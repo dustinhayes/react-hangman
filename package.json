@@ -1,0 +1,30 @@
+{
+  "name": "flux-hangman",
+  "version": "0.0.1",
+  "description": "React Hangman Game",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "watchify js/index.js -o js/bundle.js"
+  },
+  "author": "dustinhayes",
+  "license": "ISC",
+  "dependencies": {
+    "flux": "~2.0.1",
+    "react": "~0.12.0",
+    "merge": "~1.2.0",
+    "lodash.sample": "~2.4.1",
+    "browser-request": "~0.3.2"
+  },
+  "devDependencies": {
+    "body-parser": "~1.9.2",
+    "express": "~4.10.1",
+    "watchify": "~2.1.1",
+    "browserify": "~6.2.0",
+    "reactify": "~0.15.2"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
