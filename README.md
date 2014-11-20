@@ -12,6 +12,7 @@ The main purpose of this project is to experiment how traditional HTML/CSS devel
 1. Download the ZIP
 2. Open your terminal
 3. `$ cd /path/to/repo`
-4. `$ node server.js`
-5. `$ npm start`
-6. Open localhost:3000 in your browser of choice.
+4. `$ npm install`
+5. `$ node server.js`
+6. `$ npm start`
+7. Open localhost:3000 in your browser of choice.
