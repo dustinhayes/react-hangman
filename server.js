@@ -11,35 +11,35 @@ var app = express();
 app.use('/', express.static(__dirname));
 
 /**
- * Pull in the secretes data
+ * Pull in the secrets data
  */
-var secretes = JSON.parse(fs.readFileSync('./secretes.json'));
+var secrets = JSON.parse(fs.readFileSync('./secrets.json'));
 
 /**
  * Set up the api
  */
-app.get('/secrete/random', function (req, res) {
+app.get('/secret/random', function (req, res) {
     /**
      * Find a random category
      */
-    var category = sample(Object.keys(secretes));
+    var category = sample(Object.keys(secrets));
         
     /**
-     * Find a random secrete in the found category. Filter the secretes that
+     * Find a random secret in the found category. Filter the secrets that
      * are greater than res.query.length and don't contain a '.' or '-'.
-     * Set the secrete to all lowercase.
+     * Set the secret to all lowercase.
      */
-    var secrete = (sample(secretes[category].filter(function (secrete) {
-        return secrete.length > req.query.length &&
-            ! contains(secrete, '.') && ! contains(secrete, '-');
+    var secret = (sample(secrets[category].filter(function (secret) {
+        return secret.length > req.query.length &&
+            ! contains(secret, '.') && ! contains(secret, '-');
     }))).toLowerCase();
 
     /**
-     * Send the secrete data as the response.
+     * Send the secret data as the response.
      */
     res.send({
         category: category,
-        secrete: secrete
+        secret: secret
     });
 });
 

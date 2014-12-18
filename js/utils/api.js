@@ -4,14 +4,14 @@ var http = require('browser-request'),
 var api = {
 
     /**
-     * Call the api to receive new secrete data. Then call an action with
+     * Call the api to receive new secret data. Then call an action with
      * the new data.
      */
-    getRandomSecrete: function () {
-        http.get('/secrete/random/?length=8', function (req, res, bod) {
-            var secreteData = JSON.parse(bod);
+    getRandomSecret: () => {
+        http.get('/secret/random/?length=8', (req, res, bod) => {
+            var secretData = JSON.parse(bod);
 
-            serverActions.receivedRandomSecrete(secreteData);
+            serverActions.receivedRandomSecret(secretData);
         });
     }
 

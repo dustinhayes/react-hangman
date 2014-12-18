@@ -5,17 +5,17 @@ var api = require('../utils/api'),
 var clientActions = {
 
     /**
-     * Make a call to the API for a random secrete.
+     * Make a call to the API for a random secret.
      */
-    startGame: function () {
-        api.getRandomSecrete();
+    startGame: () => {
+        api.getRandomSecret();
     },
 
     /**
      * Called when the user clicks on a letter to see if it's in the
-     * secrete
+     * secret
      */
-    tryLetter: function (letter) {
+    tryLetter: letter => {
         dispatcher.emit(actionTypes.TRY_LETTER, letter);
     }
 

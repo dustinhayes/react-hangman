@@ -4,29 +4,29 @@ var React = require('react'),
     GameStore = require('../stores/GameStore');
 
 /**
- * Get the current state properties needed to render the secrete
+ * Get the current state properties needed to render the secret
  */
-function getState() {
+var getState = () => {
     return {
         isGameOver: GameStore.isGameOver,
         currentLevel: GameStore.currentLevel
     };
-}
+};
 
 var Gallows = React.createClass({
-    getInitialState: function () {
+    getInitialState: () => {
         return getState();
     },
 
-    componentDidMount: function () {
+    componentDidMount: () => {
         GameStore.on('CHANGE', this._setState);
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount: () => {
         GameStore.removeListener('CHANGE', this._setState);
     },
 
-    render: function () {
+    render: () => {
         return (
             <section className="Gallows">
                 {/**
@@ -38,7 +38,7 @@ var Gallows = React.createClass({
         );
     },
 
-    _setState: function () {
+    _setState: () => {
         this.setState(getState());
     }
 });

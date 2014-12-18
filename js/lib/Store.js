@@ -4,8 +4,11 @@ var EventEmitter = require('events').EventEmitter,
 /**
  * Creates a new store with semi-immutable state. __setState__ is the only way
  * to change state and should only be called within the store file.
+ *
+ * @param __state__ | Object | acts as initial state
+ * @param accessors | Object | accessor methods to retrieve view-layer data
  */
-var Store = function (__state__, accessors) {
+var Store = (__state__, accessors) => {
     /**
      * Each Store child inherits from EventEmitters prototype so they can
      * emit a CHANGE event each time they change.
@@ -28,7 +31,7 @@ var Store = function (__state__, accessors) {
          * properties or alter the old ones. Emits a CHANGE event.
          */
         __setState__: {
-            value: function (changeState) {
+            value: (changeState) => {
                 __state__ = Object.freeze(merge({}, __state__, changeState));
 
                 Child.emit('CHANGE');

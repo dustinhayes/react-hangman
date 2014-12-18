@@ -1,16 +1,16 @@
 var React = require('react'),
-    Secrete = require('./Secrete'),
+    Secret = require('./Secret'),
     Gallows = require('./Gallows'),
     Letters = require('./Letters');
 
 var Hangman = React.createClass({
-    render: function () {
+    render: () => {
         return (
             <section className="Hangman">
                 {/**
                  * Pull in the three sections of the hangman application
                  */}
-                <Secrete />
+                <Secret />
                 <Gallows />
                 <Letters />
             </section>

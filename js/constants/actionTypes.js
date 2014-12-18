@@ -6,7 +6,7 @@ var actionTypes = keyprop([
     // the NewGame button.
     'START_GAME',
 
-    // Called when the server response with new secrete data.
+    // Called when the server response with new secret data.
     'RECEIVED_RANDOM_SECRET',
 
     // Called when the user clicks on a letter on the LetterBoard.

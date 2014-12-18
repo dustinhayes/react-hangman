@@ -1,27 +1,27 @@
 var React = require('react'),
     contains = require('../lib/contains');
 
-var SecreteDisplay = React.createClass({
+var SecretDisplay = React.createClass({
     /**
      * Describe the properties that this component takes
      */
     propTypes: {
-        secrete: React.PropTypes.string,
+        secret: React.PropTypes.string,
         lettersCorrect: React.PropTypes.array
     },
 
-    render: function () {
+    render: () => {
         var lettersCorrect = this.props.lettersCorrect;
         /**
-         * Split the secrete into words and map over them returning a <ul>
+         * Split the secret into words and map over them returning a <ul>
          */
-        var words = this.props.secrete.split(' ').map(function (word, index) {
+        var words = this.props.secret.split(' ').map((word, index) => {
             {/**
              * Split each word into letters returning an <li>
              */}
-            var letters = word.split('').map(function (letter, index) {
+            var letters = word.split('').map((letter, index) => {
                 return (
-                    <li className="Secrete_display_letter" key={index}>
+                    <li className="secret_display_letter" key={index}>
                         {/**
                          * If the letter was guessed correctly show it
                          */}
@@ -31,18 +31,18 @@ var SecreteDisplay = React.createClass({
             }, this);
 
             return (
-                <ul className="Secrete_display_word" key={index}>
+                <ul className="secret_display_word" key={index}>
                     {letters}
                 </ul>
             );
         }, this);
 
         return (
-            <section className="Secrete_display">
+            <section className="secret_display">
                 {words}
             </section>
         );
     }
 });
 
-module.exports = SecreteDisplay;
+module.exports = SecretDisplay;

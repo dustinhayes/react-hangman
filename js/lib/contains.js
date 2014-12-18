@@ -1,4 +1,4 @@
-var contains = function contains(subj, test) {
+var contains = function (subj, test) {
     return subj.indexOf(test) !== -1;
 };
 

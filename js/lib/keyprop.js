@@ -1,5 +1,5 @@
-var keyprop = function keyprop(arr) {
-    return arr.reduce(function (prev, curr) {
+var keyprop = (arr) => {
+    return arr.reduce((prev, curr) => {
         return (prev[curr] = curr, prev);
     }, {});
 };

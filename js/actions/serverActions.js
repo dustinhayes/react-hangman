@@ -7,10 +7,10 @@ var serverActions = {
      * Once the server responds with the data dispatch it to any stores that
      * may be listening for it.
      */
-    receivedRandomSecrete: function (secreteData) {
-        dispatcher.emit(actionTypes.RECEIVED_RANDOM_SECRET, secreteData);
+    receivedRandomSecret: secretData => {
+        dispatcher.emit(actionTypes.RECEIVED_RANDOM_SECRET, secretData);
     }
 
 };
 
-module.exports = window.serverActions = serverActions;
+module.exports = serverActions;

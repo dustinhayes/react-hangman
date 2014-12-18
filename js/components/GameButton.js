@@ -2,15 +2,19 @@ var React = require('react'),
     clientActions = require('../actions/clientActions');
 
 var GameButton = React.createClass({
-    render: function () {
+    componentDidMount: () => {
+        this.getDOMNode().focus();
+    },
+
+    render: () => {
         return (
-            <button className="GameButton" onClick={this._startNewGame}>
+            <button tabIndex='1' className="GameButton" onClick={this._startNewGame}>
                 New Game
             </button>
         );
     },
 
-    _startNewGame: function () {
+    _startNewGame: () => {
         clientActions.startGame();
     }
 });
