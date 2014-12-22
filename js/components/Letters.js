@@ -30,6 +30,10 @@ var Letters = React.createClass({
     },
 
     componentDidMount: () => {
+        /**
+         * When this component mounts, we want to listen for keyups as an
+         * alternative way to try letters
+         */
         window.addEventListener('keyup', this._tryLetter);
         GameStore.on('CHANGE', this._setState);
     },
@@ -80,6 +84,10 @@ var Letters = React.createClass({
     _tryLetter: event => {
         var letter = String.fromCharCode(event.keyCode).toLowerCase();
 
+        /**
+         * If the letter is not valid, the game is over, or we've played this
+         * letter, return.
+         */
         if (!(/^[a-zA-Z]+$/).test(letter) || this.state.isGameOver ||
             contains(this.state.lettersPlayed, letter)) {
             return;
