@@ -18,15 +18,15 @@ var Gallows = React.createClass({
         return getState();
     },
 
-    componentDidMount: () => {
+    componentDidMount: function () {
         GameStore.on('CHANGE', this._setState);
     },
 
-    componentWillUnmount: () => {
+    componentWillUnmount: function () {
         GameStore.removeListener('CHANGE', this._setState);
     },
 
-    render: () => {
+    render: function () {
         return (
             <section className="Gallows">
                 {/**
@@ -38,7 +38,7 @@ var Gallows = React.createClass({
         );
     },
 
-    _setState: () => {
+    _setState: function () {
         this.setState(getState());
     }
 });

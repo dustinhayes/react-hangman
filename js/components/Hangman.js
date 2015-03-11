@@ -4,7 +4,7 @@ var React = require('react'),
     Letters = require('./Letters');
 
 var Hangman = React.createClass({
-    render: () => {
+    render: function () {
         return (
             <section className="Hangman">
                 {/**

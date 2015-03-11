@@ -11,7 +11,7 @@ var Letter = React.createClass({
         isGameOver: React.PropTypes.bool
     },
 
-    render: () => {
+    render: function () {
         var className = "Letters_letter";
 
         /**
@@ -31,7 +31,7 @@ var Letter = React.createClass({
     /**
      * Get the letter that was click and try that letter
      */
-    _tryLetter: event => {
+    _tryLetter: function (event) {
         var letter = event.target.innerText;
 
         /**

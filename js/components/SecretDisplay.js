@@ -10,7 +10,7 @@ var SecretDisplay = React.createClass({
         lettersCorrect: React.PropTypes.array
     },
 
-    render: () => {
+    render: function () {
         var lettersCorrect = this.props.lettersCorrect;
         /**
          * Split the secret into words and map over them returning a <ul>

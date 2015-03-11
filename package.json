@@ -16,15 +16,15 @@
     "browser-request": "~0.3.2"
   },
   "devDependencies": {
+    "babelify": "^5.0.4",
     "body-parser": "~1.9.2",
-    "express": "~4.10.1",
-    "watchify": "~2.1.1",
     "browserify": "~6.2.0",
-    "reactify": "~0.15.2"
+    "express": "~4.10.1",
+    "watchify": "~2.1.1"
   },
   "browserify": {
     "transform": [
-      "reactify"
+      "babelify"
     ]
   }
 }

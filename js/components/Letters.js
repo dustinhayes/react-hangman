@@ -29,7 +29,7 @@ var Letters = React.createClass({
         return getState();
     },
 
-    componentDidMount: () => {
+    componentDidMount: function () {
         /**
          * When this component mounts, we want to listen for keyups as an
          * alternative way to try letters
@@ -38,11 +38,11 @@ var Letters = React.createClass({
         GameStore.on('CHANGE', this._setState);
     },
 
-    componentWillUnmount: () => {
+    componentWillUnmount: function () {
         GameStore.removeListener('CHANGE', this._setState);
     },
 
-    render: () => {
+    render: function () {
         /**
          * Map over each row of letters returning a <ul>
          */
@@ -81,7 +81,7 @@ var Letters = React.createClass({
         );
     },
 
-    _tryLetter: event => {
+    _tryLetter: function (event) {
         var letter = String.fromCharCode(event.keyCode).toLowerCase();
 
         /**
@@ -96,7 +96,7 @@ var Letters = React.createClass({
         clientActions.tryLetter(letter);
     },
 
-    _setState: () => {
+    _setState: function () {
         this.setState(getState());
     }
 });

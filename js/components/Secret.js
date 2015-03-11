@@ -19,17 +19,17 @@ var Secret = React.createClass({
         return getState();
     },
 
-    componentDidMount: () => {
+    componentDidMount: function () {
         GameStore.on('CHANGE', this._setState);
         SecretStore.on('CHANGE', this._setState);
     },
 
-    componentWillUnmount: () => {
+    componentWillUnmount: function () {
         GameStore.removeListener('CHANGE', this._setState);
         SecretStore.removeListener('CHANGE', this._setState);
     },
 
-    render: () => {
+    render: function () {
         return (
             <section className="secret">
                 <h1 className="secret_category">{this.state.category}</h1>
@@ -45,7 +45,7 @@ var Secret = React.createClass({
         );
     },
 
-    _setState: () => {
+    _setState: function () {
         this.setState(getState());
     }
 });

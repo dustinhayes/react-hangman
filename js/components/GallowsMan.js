@@ -9,7 +9,7 @@ var GameButton = React.createClass({
         currentLevel: React.PropTypes.number
     },
 
-    render: () => {
+    render: function () {
         return (
             <section className="Gallows_man">
                 <h1>{this.props.currentLevel}</h1>

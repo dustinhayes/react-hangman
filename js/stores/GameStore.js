@@ -11,7 +11,7 @@ var accessors = {
      * secret string
      */
     lettersCorrect: {
-        get: () => {
+        get: function () {
             var secret = secretStore.state.secret;
 
             return this.state.lettersPlayed.filter(function (letter) {
@@ -24,7 +24,7 @@ var accessors = {
      * Subtract the lettersPlayed from the letters correct
      */
     currentLevel: {
-        get: () => {
+        get: function () {
             return this.state.lettersPlayed.length -
                 this.lettersCorrect.length;
         }
@@ -35,7 +35,7 @@ var accessors = {
      * correct array, or we are on the 8th level, the game is over.
      */
     isGameOver: {
-        get: () => {
+        get: function () {
             var secret = secretStore.state.secret;
 
             return Array.prototype.every.call(secret, letter => {
