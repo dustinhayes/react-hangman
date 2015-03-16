@@ -1,0 +1,46 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 600px;
+}
+
+
+/* secret_display_word */
+.secret_display_word {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 1.5em;
+  list-style: none;
+}
+
+.secret_display_letter {
+  display: inline-block;
+  margin: 0 5px;
+  border-bottom: 2px solid #aaa;
+  background: #ddd;
+  min-width: 1em;
+  min-height: 1em;
+}
+
+
+/* Letters_row */
+.Letters_row {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 1.5em;
+  list-style: none;
+}
+
+[class*="Letters_letter"] {
+  display: inline-block;
+  margin: 0 5px;
+  border-bottom: 2px solid #aaa;
+  background: #ddd;
+  min-width: 1em;
+  min-height: 1em;
+}
+
+.Letters_letter--played {
+  color: #ddd;
+  background: #aaa;
+}

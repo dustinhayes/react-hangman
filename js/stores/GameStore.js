@@ -34,6 +34,10 @@ var accessors = {
      * If all the letters in the secret can be found in the the letters
      * correct array, or we are on the 8th level, the game is over.
      */
+
+     //Pete: instead of hardcoding "8" as the final counter
+     //It should be in a variable that can be utilized by
+     //other files
     isGameOver: {
         get: function () {
             var secret = secretStore.state.secret;
